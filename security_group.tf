@@ -19,14 +19,14 @@ resource "aws_security_group" "ansible-sg" {
 }
 resource "aws_security_group" "web-db-sg" {
   name        = "web-db-default-sg"
-  description = "Web VPC Default Security Group"
+  description = "Web Default Security Group"
 
   ingress {
     description = "Allow Port 22"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    security_groups = ["aws_security_group.ansible-sg"]
+    security_groups = ["aws_security_group.ansible-sg.id"]
   }
 
   ingress {
