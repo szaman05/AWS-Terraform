@@ -4,6 +4,7 @@ resource "aws_instance" "web01" {
   ami               = "ami-011939b19c6bd1492"
   instance_type     = "t2.micro"
   availability_zone = "us-east-1a"
+  key_name = "ansible-clients"
   tags = {
     "Name" = "Web01"   
   }
@@ -18,6 +19,7 @@ resource "aws_instance" "db01" {
   ami               = "ami-011939b19c6bd1492"
   instance_type     = "t2.micro"
   availability_zone = "us-east-1a"
+  key_name = "ansible-clients"
   tags = {
     "Name" = "DB01"   
   }
