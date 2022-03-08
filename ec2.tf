@@ -7,6 +7,7 @@ resource "aws_instance" "Ansible-Control" {
   ami               = "ami-0056dae7008bc574b"
   instance_type     = "t2.micro"
   availability_zone = "us-east-1a"
+  key_name   = "ansible-control.pem"
   user_data = <<-EOF
     #!/bin/bash
     sudo apt update -y
