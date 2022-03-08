@@ -7,6 +7,13 @@ resource "aws_instance" "Ansible-Control" {
   ami               = "ami-0056dae7008bc574b"
   instance_type     = "t2.micro"
   availability_zone = "us-east-1a"
+  user_data = <<-EOF
+    #!/bin/bash
+    sudo apt update -y
+    sudo apt install software-properties-common -y
+    sudo add-apt-repository --yes --update ppa:ansible/ansible
+    sudo apt install ansible -y
+    EOF
   tags = {
     "Name" = "Ansible-Control"   
   }
