@@ -26,7 +26,7 @@ resource "aws_security_group" "web-db-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    security_groups = "aws_security_group.ansible-control-sg"
+    security_groups = ["aws_security_group.ansible-sg"]
   }
 
   ingress {
